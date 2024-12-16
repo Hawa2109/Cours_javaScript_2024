@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les types de variable</title>
+</head>
+<body>
+
+    <script>
+        // -------------------------------
+        // les DIfférents types de valeurs
+        // --------------------------------
+        /*
+        Il existe plusieurs types de valeurs, que l'on peut assigner à nos variables
+        -> les chaines de cractéres (string) => phrase, entre guillemets simple ou double
+        ->  nombres : 5, 10, 12.8
+        -> booléen (boolean) => true ou false
+        -> tableau (array) => ["julien", 10]
+        -> nul
+        -> classes
+        -> objets
+        -> fonctions
+        */
+
+    //  Type STRING
+    //  Nous pouvons initialiser une chaine de caractére de plusieurs façons :
+    // Avec des guillemets double (doubles quoted) :
+
+    let chaine1 = "test1";
+    // console.log( chaine1);
+
+    // Avec guillemet simple (simple quotes) :
+    let chaine2 = 'test2';
+    // console.log(typeof chaine2, chaine2);
+    // typeof pour connaitre le type.
+
+
+    // En js la convention de nommage est le "camelCase" : chaque nouveau mot de votre variable doit être en majuscule
+
+    let monTexte1 = "Voici une phrase écrite dans un double quote";
+    // console.log(monTexte1);
+
+    let monTexte2 = 'Voici une phrase écrite dans un simple quote aujourd\'huit';
+    // console.log(monTexte2);
+
+
+    let monTexte3 = 'je sors lorsqu\'il fait beau';
+    // console.log(monTexte3);
+
+    // l'antislash permet d'échaper un caractére dans le string
+
+
+    // Avec backquote ``(alt Gr + 7)
+
+    let bienvenue = `Aujourd'huit c'est l'arrivé de Kader`;
+    // console.log(bienvenue);
+
+    const PRENOM1 = "Kader"
+    bienvenue = `Aujourd'huit c'est l'arrivé de ${PRENOM1}`;
+    // console.log(bienvenue);
+
+    const PRENOM2 =  "Hawa"
+    // let monTexte4 = "je sors avec" + PRENOM2 + "lorsqu'il fait beau";
+    // console.log(monTexte4);
+    // let monTexte4 = 'je sors avec' + PRENOM2 + 'lorsqu\'il fait beau';
+    let monTexte4 = `je sors avec ${PRENOM2} lorsqu'il fait beau`;
+    //  console.log(monTexte4);
+
+
+
+
+    // ----------------------------------------type NUMBER ----------------------------------
+
+    let chiffre1 = 55;
+    let negatif = -55;
+    let decimal = 5.5
+
+
+
+    // --------------------------------- type BOOLEEN ---------------------------------------
+
+    let choix = true;
+    // console.log(choix);
+
+
+    // ----------------------------------------------------------------------------------------
+    // Afin de verifier le type d'une variable, on utilise la fonction TYPEOF()
+    console.log(typeof(choix), choix);
+    console.log(typeof(decimal), decimal);
+    console.log(typeof(negatif), negatif);
+    console.log(typeof(monTexte4),monTexte4);
+
+
+
+    // -----------------------------------  AFFICHAGE  ----------------------------------------
+    // Pour afficher le contenu de ma variable  sur la page 
+    const ESPACE = "\n"
+    const SAUTLIGNE = "<br>"
+    document.write(monTexte4, ESPACE, bienvenue);
+    // document.write(bienvenue);
+
+
+    // ------------------------------------ Boite de dialogue ----------------------------------
+
+    // alert("Ceci est un message d'alert");  // affiche une alert
+    // confirm("Vous confirmez ? ");  // confirme une action
+
+    // prompt("Voici un prompt");   //Récuperer une donnée de l'utilisateur
+
+    let monAge = prompt("Quel est votre âge ?");
+    console.log(monAge);
+
+
+
+
+
+
+
+
+    </script>
+
+
+    
+</body>
+</html>

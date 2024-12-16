@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les strings</title>
+</head>
+<body>
+    <script>
+        const PRENOM = "Alexandre";
+        const NOM = "Cavet";
+        // Document.write(PRENOM + '' + NOM + '<br>');
+        document.write(`${PRENOM} ${NOM}  <br>`);
+
+        const PRENOM2 = "Ouarda";
+        const NOM2 = "Chied";
+        document.write(`${PRENOM2} ${NOM2}  <br>`);
+
+
+        let a = 10;
+        let b = 5;
+        let c = "5"
+        // document.write((a + b) + '<br>');
+        document.write(`${a + b} <br>`);
+
+        document.write(a + ' ' + c);
+        //  document.write((a + c)); // cré une concaténation
+        // document.write(`${a + c} <br>`);
+
+
+        // Réaliser un prompt demandant son age à lèutilisateur puis récuperer cette donnée et l'afficher de cette façon : "Vous avez xx ans !"
+
+        // let age = prompt("Quel est votre âge ?");
+    //    document.write("Vous avez" + age + " ans ! " + "<br>");
+    //    document.write(`Vous avez ${age} ans !<br>`);
+        // console.log(age);
+        document.write("<hr>");
+
+        let fruits = 'pommes';
+        // console.log('fruits');
+
+        fruits += 'fraise';
+        // fruits = fruits + 'fraise';
+        // console.log(fruits);
+
+        fruits +='mangue';
+        // console.log(fruits);
+
+        document.write("<hr>");
+
+        let quelqueChose;
+        
+        // console.log(quelqueChose);
+        // Affiche "undefind parce que la variable n'a pasde valeur, donc je peux la garder sans contenu mais elle restera indéfinie"
+        // console.log(autreChose);
+        // Affiche une érreur : not defiend, parce que la variable n'existe pas, je l'ai jamais déclaré.
+
+        document.write("<hr>");
+
+        // String => vers number
+        let unNombre = '24'; // Affiche 24
+        console.log(unNombre);
+        console.log(typeof unNombre, unNombre); // retourne dans la console : string (chaîne de caractére)
+
+        //  Pour convertir le string '24' en chiffre 24
+
+        unNombre = parseFloat(unNombre);
+        console.log(unNombre);
+        console.log(typeof unNombre);
+
+        // Number => vers string
+
+        unNombre = unNombre.toString();
+        console.log(unNombre);
+        console.log(typeof unNombre);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    
+</body>
+</html>

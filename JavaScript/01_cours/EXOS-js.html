@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exos JS</title>
+
+    <style>
+        body {
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        // ----------EXO 1 - Déclaration des variables-------------
+
+        // num qui contient le nombre 255
+
+        let num = 255;
+        // document.write(num);
+        // document.write("<hr>")
+
+        // txt qui contient la chaîne de caractères 255
+        let txt = "255";
+        // document.write(txt);
+        // document.write("<hr>")
+
+
+        // bin (pour binaire ou binary) qui contient la valeur booléenne vraie
+        let bin = true;
+        //  document.write(bin);
+        // document.write("<hr>")
+
+
+        // flt (pour float décimal ou flottant) qui contient la valeur 7,23
+        let flt = 7.23;
+        //  document.write(flt);
+        // document.write("<hr>")
+
+        // affichez les contenus des variables dans des console.log
+        console.log(num, txt, bin, flt);
+         console.log(typeof num, num);
+         console.log(typeof txt, txt);
+         console.log(typeof bin, bin);
+         console.log(typeof flt, flt);
+
+
+        // ------------EXO 2---------------------
+        // A)- Appliquez à num l'opérateur d'incrémentation ++ (ce qui doit donner 256)
+        // num = ++num;
+         num++;
+         console.log(num);
+
+         num = ++num
+         console.log(num);
+        // B)- Concaténez à la chaîne txt la chaîne suivante : " est ici une chaîne de caractères."
+        document.write(`${txt} est ici une chaîne de caractéres. <br>`);
+        // document.write(txt + 'est ici une chaîne de caractéres. <br>');
+
+        // et la concaténation dans un document.write
+
+         // C)- Inversez la valeur logique de bin 
+         bin = false;
+        console.log(bin)
+        //  console.log(!bin);
+
+         let bin2 = true;
+         console.info('bin2 ' + bin2);
+
+        // D)- ajouter à flt la valeur num
+        // flt = flt + num;
+        flt +=num;
+        console.log(flt);
+
+        console.log(num, txt, bin, flt);
+
+
+
+         // --------------- EXO 3 -------------------
+
+        // num2 qui contient le nombre 23
+        let num2 = 23;
+        // txt2 qui contient la chaîne de caractère 33
+        let txt2 = "33";
+        
+        // Affichez le résultat de txt2 + num2 avec console.log
+         console.log(txt2, num2);
+        console.log(num + txt2);
+// on peut pas additionnner une sring avec un number
+        txt2 = Number(txt2);
+        console.log(num2 + txt2);
+        // console.log(num + number(txt2));
+
+        // Affichez le résultat de num2 + txt2 avec console.log
+
+
+
+    </script>
+
+    
+</body>
+</html>

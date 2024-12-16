@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les nombres</title>
+</head>
+
+<body>
+    <script>
+        //  Initialiser un nombre
+        const A = 5 * 10;
+        const B = 10 / 2;
+        const C = 15 - 5;
+        const D = 20 + 10;
+        const F = 5 % 10;
+
+        //  Effectuer des calculs
+        const E = A + B;
+        // console.log(E);
+
+        //  addition
+        let addition = 10 + 5;
+        document.write('Le résultat de l\'addition de 10 et 5 est égale à : ' + addition + '<br>'); // on concatene avec une chaîne de caractère, on utilise le signe "+"
+        document.write("Le résultat de l'addition de 10 et 5 est égale à : " + addition + "<br>");
+        document.write(`Le résultat de l'addition de 10 et 5 est égale à :  ${addition}  <br>`);
+        document.write("<hr>")
+        //  soustraction
+        let soustraction = 16 - 4;
+        document.write(`Le résultat de la soustraction de 16 - 4 est égale à :  ${soustraction}  <br>`);
+        document.write("<hr>")
+        //  multiplication
+        let multiplication = 5 * 4;
+        document.write(`Le résultat de la multiplication de 5 * 4 est égale à :  ${multiplication}  <br>`);
+        document.write("<hr>")
+        // division
+        let division = 20 / 4;
+        document.write(`Le résultat de la division de 20 par 4 est égale à :  ${division}  <br>`);
+        document.write("<hr>")
+        // modulo
+        let modulo = 10 % 3;
+        document.write(`Le résultat de 10 modulo 3 est égale à :  ${modulo}  <br>`);
+
+        // Incrémentation et décrémentation
+        let g = 10;
+        // 1ère façon
+        // g = g + 5;
+        // console.log(g);
+
+        // 2ème façon
+        g += 5;
+        // console.log(g);
+        // Les deux lignes avec less deux syntaxes donnenet le même résultat (ATTENTION, il faut commenter la 1ère afin de vérifier le résultat de la 2ème)
+
+        //  Nous pouvons ajouter 1 -> incrémentation avec ++
+        //  ou enlever 1 -> décrémentation avec  --
+
+        let h = 50;
+        //1ère façon
+        // h = h + 1;
+
+        // 2ème façon
+        h++;
+        //console.log(h); // 51
+
+        h--;
+        //console.log(h); // 50
+
+
+        // ----------------------------------------
+
+        let i = 1;
+        console.log(i);
+        // i++ affecte puis incrémente la valeur. Dans l'exemple ci-dessous, i++ incrémentera la valeur de i, mais retournera la valeur d'origine avant d'être incrémenter
+        let j = i++;
+        console.log(j); // = 1
+        console.log(i); // = 2
+        console.clear(); // nettoyer le console
+
+        //  ++k incrémente puis affecte la valeur. Dans l'exemple ci-dessous, ++k incrémentera la valeur de k, puis retournera la valeur incrémentée
+        let k = 1;
+        let l = ++k;
+        console.log(l);
+        console.log(k);
+        console.clear();
+
+        //  Exercice
+        /*
+            recuperez dans un prompt, la valeur souhaitée par l'utilisateur
+            Envoyez une alert indiquant le résultat au carré et au cube de la valeur
+        */
+
+        let valeur;
+        valeur = prompt("Entrez votre valeur :");
+        // console.log(valeur);
+        let valeurCarre = valeur * valeur;
+        // let valeurCarre = valeur ** 2;
+
+        // console.log(valeurCarre);
+        let valeurCube = valeur * valeur * valeur;
+        // let valeurCube = valeur ** 3;
+
+        // console.log(valeurCube);
+
+        alert(`Resultat au carré : ${valeurCarre} et resultat au cube : ${valeurCube}`);
+        
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
