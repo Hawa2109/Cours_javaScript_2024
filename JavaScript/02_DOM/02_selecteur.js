@@ -82,7 +82,7 @@ for(let p of lesP) {
 // l'avantage de querySelector est qu'il utilise la même syntaxe de selection en CSS
 //  document.querySelector("#monId"), document.querySelector(".maClass"), document.querySelector("maBalise")
 
- div.style.border = "5px solid red";
+ div.style.border = "3px solid red";
 
 // Method querySelectorAll()
 
@@ -141,6 +141,101 @@ let soustitre = document.querySelector("h2");
 let toMove = document.querySelector("h4");
 
 parent.insertBefore(toMove, soustitre);
+
+// -------------- Supprimer un élément ----------------------------------
+        // pour supprimer un élément il nous faut deux paramétres
+    //  -> le parent
+    //  -> l'élément à supprimer:
+//  Le parent
+let liste = document.querySelector("ul");
+console.log(liste);
+
+// l'élément à supprimer
+let li = document.querySelectorAll("li");
+console.log(li);
+// Pour supprimer on utilise la removeChild()
+liste.removeChild(li[1]);
+
+// Créer un attribut et sa valeur
+//  la methode setAttribute() -> pour ajouter un nouvel attribut ou changer la valeur d'un attribut exixtant pour un élément
+
+let lien1 = document.querySelector("a");
+lien1.setAttribute("class", "link-underline-danger text-warning bg-primary bg-opacity-50");
+// Rajout un attribut et sa valeur 
+
+lien1.setAttribute("href", "01_introduction.html");  // Changer la valeur de l'attribut 
+console.log(lien1);
+
+// -----------------------------------------------------------
+let lesA = document.querySelectorAll("a");
+console.log(lesA);
+
+//  Ici pour récupérer l'attribut du troisiéme "a" dans la liste ul, il faut indiquer l'index 1 car li[1] est supprimer du DOM
+let valeurA2 = lesA[1].getAttribute("href");
+console.log(valeurA2);
+
+// ------------------------------------------
+    // -------Exercice
+// ------- Grace à votre script, créer une balise "a" dans "h1" avec le lien vers la documentation JS, qui s'affiche sur un nouvel onglet.
+
+// Ce lien sera de couleur orange et non souligné
+
+// ------------     ---------------
+
+let titre = document.getElementById("titreNiveau1");
+
+// créer une balise "a"
+let nouveauA = document.createElement("a");
+
+//  le lien vers la documentation JS
+nouveauA.innerText = "lien vers Bootstrap";
+nouveauA.setAttribute("href", "https://getbootstrap.com/docs/5.3/getting-started/introduction/");
+//  Pour le mettre dans la balise h1
+titre.appendChild(nouveauA);
+
+//  s'affiche sur un nouvel onglet
+nouveauA.target = "_blank";
+//  lien sera de couleur orange et non souligné.
+nouveauA.style.color = "orange";
+nouveauA.style.textDecoration = "none";
+
+/*
+        Sélection de la balise h1
+        let h1 = document.getElementById("titreNiveau1");
+        Création de l'élément <a>
+        let lien = document.createElement("a");
+        Configuration du texte du lien
+        lien.textContent = "Documentation JavaScript";
+        Configuration de l'URL du lien (1ère façon)
+         lien.setAttribute("href", "https://developer.mozilla.org/fr/");
+        // Configuration de l'URL du lien (2ème façon)
+        lien.href = "https://developer.mozilla.org/fr/";
+        // Configuration pour ouvrir le lien dans un nouvel onglet (1ère façon)
+        // lien.setAttribute("target", "_blank");
+        // Configuration pour ouvrir le lien dans un nouvel onglet (2ème façon)
+        lien.target = "_blank";
+        // Application des styles pour que le lien soit vert et non souligné
+        lien.style.color = "green";
+        lien.style.textDecoration = "none";
+
+        // Ajout du lien à l'intérieur de la balise h1
+        h1.appendChild(lien);
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
