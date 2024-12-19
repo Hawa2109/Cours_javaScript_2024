@@ -1,33 +1,42 @@
 /* div # rouge */
-#rouge, #orange, #info, #primary, #success {
-    width: 150px;
-    height: 150px;
-    font-size: 2em;
-    line-height: 150px;
-    text-align: center;
-    color: #fff;
-    margin: auto;
+#rouge,
+#orange,
+#info,
+#primary,
+#success,
+#secondary {
+  width: 150px;
+  height: 150px;
+  font-size: 2em;
+  line-height: 150px;
+  text-align: center;
+  color: #fff;
+  margin: auto;
 }
 
 #rouge {
-    background-color: red;
-   
+  background-color: red;
 }
 #orange {
-    background-color: orange;
-    
+  background-color: orange;
 }
 #info {
-    background-color: rgb(77, 181, 205);
+  background-color: rgb(77, 181, 205);
 }
 #primary {
-    background-color: rgb(0, 125, 202);
+  background-color: rgb(0, 125, 202);
 }
 .vert {
-    background-color: rgb(25, 135, 84);
+  background-color: rgb(25, 135, 84);
+}
+#secondary {
+  background-color: #7400b6;
 }
 .gold {
-    background-color: gold;
-    border-radius: 50%;
+  /* background-color: gold; */
+  background-color: goldenrod;
+  border-radius: 50%;
 }
-
+.hide {
+  display: none;
+}
