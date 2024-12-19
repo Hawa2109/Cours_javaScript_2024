@@ -1,0 +1,25 @@
+/* div # rouge */
+#rouge, #orange, #info, #primary {
+    width: 150px;
+    height: 150px;
+    font-size: 2em;
+    line-height: 150px;
+    text-align: center;
+    color: #fff;
+    margin: auto;
+}
+
+#rouge {
+    background-color: red;
+   
+}
+#orange {
+    background-color: orange;
+    
+}
+#info {
+    background-color: rgb(77, 181, 205);
+}
+#primary {
+    background-color: rgb(36, 104, 177);
+}
