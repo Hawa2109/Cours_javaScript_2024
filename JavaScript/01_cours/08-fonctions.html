@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Les fonctions en JS</title>
+  </head>
+  <body>
+    <script>
+      document.write(`<h2>Fontions prédéfinies et fonctions utlisateurs</h2>`);
+      // Le JS posséde des fonctions. Ce sont des morceaux de codes en capsulé qu'on appel au besoin pour exécuter une action précise on distingue les fonctions prédéfinies et les fonctions utilisateurs.
+
+      document.write(`<h3>Fontions prédéfinies</h3>`);
+      // -------------- a) fonction prédéfinies sur des nombres ----------
+
+      let tesNumber = 1.5555555;
+      document.write(typeof tesNumber + " ");
+
+      let number = tesNumber.toFixed(2); // la fonction toFixed définit un nombre de chiffre aprés la virgule et elle retourne une chaîne de caractére (string)
+      document.write(typeof number + " ");
+      document.write(typeof parseFloat(number));
+
+      document.write("<br>");
+      document.write("<hr>");
+
+      // let testMath = Math.pow(2,2);  // puissance
+      // let testMath = Math.PI;  // 3.14
+      // let testMath  = Math.floor(1.9);  // 1 -> chercher le nombre entier inférieur
+
+      // let testMath  = Math.ceil(1.9);  // 2 -> chercher le nombre entier suppérieur
+
+      // let testMath = Math.max(10,8,14,50,6);   // 50 retourne la valeur la plus grande
+
+      // let testMath = Math.min(10,8,14,50,6);  // 6 retourne la valeur la plus petite
+
+      // let testMath = Math.random();   // retourne un nombre décimal entre 0 et 1 qui change à chaque rafraichissement de la page. C'est un nombre coplétement aléatoire
+
+      // console.log(testMath);
+
+      //  Je veux un nombre entier entre 0 et 100 de façon aléatoire
+      let nombre = Math.random() * 100;
+      // document.write(nombre + '<br> ');
+      document.write(Math.round(nombre) + "<br>");
+      document.write("<hr>");
+
+      // -------------- b) fonction prédéfinies sur des chaines de caractéres ----------
+      let phrase = "Salut Yacine";
+      document.write(phrase.length + "<br>"); // length est une propiété  // pour retourner le nombre de caractére
+      document.write("<hr>");
+
+      document.write(phrase.indexOf("l") + "<br>"); // 2 retourne la position de l'argument passé en paramétre de la fonction indexOf()
+      document.write(phrase.toLowerCase() + "<br>"); // retourne "Salut Yacine"  fonction pour enlever les mmajuscules
+      document.write("<hr>");
+
+      document.write(phrase.toUpperCase() + "<br>"); // retourne "Salut Yacine"  pour tout mettre en  mmajuscule
+
+      let phrase2 = "             du texte  ";
+
+      console.log(phrase2.trim()); // enléve tous les espaces avant et aprés
+
+      let phrase3 = "metro. boulot. dodo, 0";
+      console.log(phrase3);
+
+      console.log(phrase3.split(",")); // retourne un tableau à partir d'une chaines de caractére
+      document.write("<hr>");
+
+      document.write(`<h3>Fontions utilisateurs</h3>`);
+      //  Un des grands principe en programmation est d'avoir un code DRY (Don't Repaet Yourself)
+      // Les fonctions utilisateurs sont des blocs de codes réutilisables et modifiable, à volonté
+      // ------------Déclaration d'une fonction ou  initialisation d'une fonction
+
+      function maFonction() {
+        document.write(`<p> Ma premier fonction </p>`);
+      }
+
+      // Appel (exécution de la fonction)
+      maFonction();
+      //  Autres syntaxe pour déclarer une fonction, elle consiste à asigner une fonction à une variable
+
+      let direBonjour = function () {
+        document.write(`<p> Bonjour tout le monde </p>`);
+      };
+      direBonjour();
+
+      //  Fonction avec paramétre
+
+      function direBonjour1(prenom) {
+        document.write(`<p> Bonjour ${prenom} </p>`);
+      }
+      direBonjour1("Alexandre");
+      direBonjour1("Delma");
+
+      //  Vous pouvez mettre autant de paramétres
+
+      function direBonjour2(nom, age) {
+        document.write(`<p> Bonjour ${nom}, tu as ${age} ans. </p>`);
+      }
+      direBonjour2("Yacine", 28);
+      direBonjour2("Alexandre", 51);
+
+      // fonction de calcul
+      function addition(nombre1, nombre2) {
+        let resultat = nombre1 + nombre2;
+        document.write(
+          `Résultat de l'addition : ${nombre1} + ${nombre2} = ${resultat}`
+        );
+      }
+      addition(5, 10);
+
+      // protection des fonctions
+      function direSalut(prenomSalut = "") {
+        document.write(`<p>Salut ${prenomSalut}</p>`);
+      }
+      direSalut();
+
+      // Création d'une fonction comme raccourcit de "document.write()"
+
+      function d(content, balise) {
+        if (balise === 1) {
+          document.write(`<h2>${content}</h2>`);
+        } else {
+          document.write(`<p>${content}</p>`);
+        }
+      }
+
+      d("titre", 1);
+      d(phrase);
+      document.write("<hr>");
+
+      //  fonction avec mot clé "return" // retourne une valeur
+
+      function calculAge(anneeActuelle, anneeNaissance) {
+        // Pour extraire le resultat et le stocker dans une variable, nous utilisons un RETURN
+
+        return anneeActuelle - anneeNaissance;
+
+        // Tout ce qui se trouve aprés le RETURN ne s'exécute pas
+        // un RETURN arrête complétement l'exécution de la fonction et renvoie une valeur
+      }
+      calculAge(2024 - 2002);
+
+      let age = calculAge(2024, 2002); // 22
+
+      d(age);
+      document.write("<hr>");
+
+      // il existe une autre façon pour évrire ou déclarer une fonction
+
+      let maFonction2 = (x, y) => {
+        d(x + y);
+      };
+      maFonction2(5, 2);
+      document.write("<hr>");
+
+      // --------------------------------------------------------------------------
+      //   La fonction fléchée ne peut pas être éxécutée avant initialisation
+      // la fonction fléchée : les accolades ne sont pas nécessaires pour une seule insttruction
+      // fléche => sert ilicitement de RETURN
+      let maFonction3 = (f, r) => f * r;
+      let produit = maFonction3(6, 5);
+      d(produit);
+      document.write("<hr>");
+
+      d("La portée des variables", 1);
+
+      // La portée des variables
+
+      /*  En Javascript, la portée des variables définit à quels endroits dans le code une variable est accessible. Il existe principalement trois types de portée :
+        Portée globale (global scope)
+        Portée Locale (ou fonctionnelle) (function scope)
+        Portée de bloc (block scope)
+
+        1-> Portée global (global scope)
+        une variable déclarée en dehorz de toute fonction ou bloc a une portée globale. Cela signifie qu'elle est accessible depuis n'importe quelle partie du code. 
+        Exemple
+*/
+
+      let message = "Bonjour, monde!"; // variable globale
+      function afficherMessage() {
+        d(message); // acces à la varible globale
+      }
+      afficherMessage(); // affiche Bonjour, monde! -> accés également à la variable globale
+
+      // dans cette exemple la variable message est défini en dehors de la fonction donc accéssible depuis la fonction "afficherMessage" et même depuis le rest du programme.
+
+      /*
+        2 -> Portée Locale ou fonctionnelle (function scope)
+          Une variable déclarer à l'interieur d'une fonction est accéssible uniquement à l'interieur de cette fonction
+
+          Exemple
+          */
+
+      function saluer() {
+        var prenom = "Delma";
+        let nom = "Leta"; // c'est une variable locale à la fonction
+        d(`Salut ${nom} ${prenom}`);
+      }
+      saluer(); // affiche Salut Leta Delma
+
+      //  console.log(nom);  // Erreur : nom is not defiend
+      //   console.log(prenom);
+
+      //  la variable nom est déclaré dans la fonction "saluer". Elle n'est accéssible qu'à l'iterieur de cette fonction. Toute tentative d'y accéder en dehors de la fonction provoque une Erreur
+      /*
+         3->  Portée de bloc (block scope)
+         Les déclarations de variable avec "let" et "const" respectent la portée de bloc, ce qui signifie qu'elles sont accessible uniquement à l'interieur du bloc {} dans lequel elles sont définies (par exemple, dans une boucle ou une condition). En revanche, les déclarer avec "var" ne respectent pas la portéé de bloc.
+         Exemple avec "let" et "const"
+         */
+
+      if (true) {
+        let x = 10;
+        const y = 20;
+        console.log(x); // il affiche 10
+        console.log(y); // il affiche 20
+      }
+      //  console.log(x); // Erreur  : x not is defiend
+      //  console.log(y); // Erreur : y is not defiend
+
+      //  dans cette exemple x et y  sont déclarés avec "let" et "const" dans le bloc if. Ils ne sont accessible que dans ce bloc.
+
+      // Exemple avec "var"
+
+      if (true) {
+        var z = 30;
+        console.log(z); // affiche : 30
+      }
+      console.log(z); // affiche : 30  -> car "var" ignore la portée de bloc
+      // Avec "var" la variable "z" est accessible en dehors du bloc "if" car "var" n'est pas limité par la portée de bloc mais uniquement par la portée de fonction.
+    </script>
+  </body>
+</html>

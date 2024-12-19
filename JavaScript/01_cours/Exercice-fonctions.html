@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercices en JavaScript</title>
+  </head>
+  <body>
+    <script>
+      /*
+                Exercice 1 : Les bases des variables
+        Objectif : Comprendre comment déclarer des variables et attribuer des valeurs.
+        Enoncé :
+        Déclarez les variables suivantes et assignez-leur des valeurs :
+        1. Une variable prenom contenant votre prénom.
+        2. Une variable age contenant votre âge.
+        3. Une variable estEtudiant qui indique si vous êtes étudiant (true/false).
+        Affichez-les dans la console avec des phrases comme :
+        Mon prénom est..., J'ai... ans, Je suis étudiant : ....
+
+                Exercice 2 : Identifier les types déclarer
+        Objectif : Identifier les types de variables déclarées.
+        Enoncé :
+        1. Déclarez les variables suivantes :
+        ○ nom = "Doe"
+        ○ nombre = 25
+        ○ isAdmin = false
+        ○ notes = [10, 15, 20]
+        2. Utilisez la fonction typeof pour afficher leur type dans la console.
+    */
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 1 Comprendre comment déclarer des variables et attribuer des valeurs. ----------
+
+      /* déclarer des variables */
+
+      let Prenom;
+      Prenom = "Hawa";
+
+      let age;
+      age = 22;
+
+      let estEtudiant;
+      estEtudiant = true;
+
+      let texte = `Mon prénom est ${Prenom}, j'ai ${age} ans, je suis étudiante : ${estEtudiant}`;
+      // console.log(`Mon prénom est ${Prenom}, j'ai ${age} ans, je suis étudiante : ${estEtudiant}`);
+
+      /* dans une console */
+      console.log(texte);
+      //    document.write(texte);
+      // document.write("<hr>");
+
+      // --------------  Déclaration de variables et des types :  --------------
+
+      // -------------- EXERCICE 2 Identifier les types de variables déclarées. ---------------
+
+      /* Identifier les types déclarer*/
+      let nom, nombre, isAdmin, notes;
+      nom = "Doe";
+      nombre = 25;
+      isAdmin = false;
+      notes = [10, 15, 20];
+
+      console.log(typeof nom, typeof nombre, typeof isAdmin, typeof notes);
+
+      /* 
+         Exercice 3 : Manipuler les Strings
+            Objectif : Savoir manipuler les chaînes de caractères.
+            Enoncé :
+            1. Déclarez une variable phrase contenant le texte :
+            "Apprendre JavaScript est amusant !".
+            2. Faites les manipulations suivantes :
+            ○ Affichez la longueur de la chaîne (nombre de caractères).
+            ○ Transformez toute la chaîne en majuscules.
+            ○ Remplacez le mot "amusant" par "facile".
+
+            Affichez chaque résultat dans la console.
+  */
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 3 Savoir manipuler les chaînes de caractères.  ----------
+
+      let phrase = "Apprendre JavaScript est amusant !";
+      console.log(phrase);
+
+      // pour affichr le nombre de chaîne (nombre de caractères)
+      // console.log(phrase.length);
+      console.log(`longueur: ${phrase.length}`);
+
+      // pour transformer le texte en majuscule
+      console.log(phrase.toUpperCase());
+
+      // pour remplacer amusant par facile
+      console.log(phrase.replace("amusant", "facile"));
+
+      /* 
+    Exercice 4 : Manipuler les Numbers
+        Objectif : Travailler avec des nombres et effectuer des calculs simples.
+
+        Enoncé :
+        1. Déclarez deux variables a = 10 et b = 3.
+        2. Calculez et affichez les résultats suivants dans la console :
+
+        ○ La somme de a et b.
+        ○ Le produit de a et b.
+        ○ La division entière et le reste de la division de a par b.
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 4 Travailler avec des nombres et effectuer des calculs simples.  ----------
+
+      let a = 10;
+      let b = 3;
+
+      // la somme de a et b
+      let somme = 10 + 3;
+      console.log("la somme de a + b est :", somme);
+
+      // le produit de a et b
+      let produit = 10 * 3;
+      // document.write(`Le résultat de la multiplication de 10 et 3 est égale à :  ${produit} `);
+      console.log("la somme de a + b est :", produit);
+
+      // la division de a et b
+      let division = 10 / 3;
+      //  document.write(`Le résultat de la division de 10 et 3 est égale à :  ${division} `);
+      console.log("la somme de a + b est :", division);
+
+      // le reste de la division de a par b
+      let reste = Math.floor(a / b);
+      console.log("le reste  de la division  a % b est :", reste);
+
+      let modulo = 10 % 3;
+      // let modulo = division % 3;
+      console.log("la somme de a % b est :", modulo);
+
+      /*  Exercice 5 : Travailler avec les Tableaux
+          Objectif : Comprendre les bases de la manipulation des tableaux.
+          Enoncé :
+          1. Déclarez un tableau fruits contenant les éléments "pomme", "banane",
+          "cerise".
+          2. Effectuez les actions suivantes :
+          ○ Ajoutez "orange" à la fin du tableau.
+          ○ Supprimez le premier élément du tableau.
+          ○ Affichez la longueur du tableau.
+          ○ Affichez le tableau modifié.
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 5 : Comprendre les bases de la manipulation des tableaux. ----------
+
+      let Fruits = ["Pomme", "Banane", "Cerise"];
+      //   console.log(Fruits);
+
+      // pour ajouter orange à la fin de mon tableau
+      Fruits.push("Orange");
+      //   console.log(Fruits);
+
+      // pour supprimer le premier élément du tableau
+      // Fruits.splice("0,1");
+      Fruits.shift();
+      //   console.log(Fruits);
+
+      // pour déterminer la longueur du tableau
+      console.log("Longueur du tableau :", Fruits.length);
+
+      //   pour afficher le tableau modifié
+      console.log("Tableau modifié :", Fruits);
+
+      // ------------ Conditions ( if / else, switch ) et l’interaction avec l'utilisateur via “prompt” et “alert” : ---------
+
+      /* 
+    Exercice 1 : Vérification de majorité
+            Objectif : Utiliser if/else pour vérifier une condition simple.
+            Enoncé :
+            1. Demandez à l'utilisateur de saisir son âge via prompt.
+            2. Si l'âge est supérieur ou égal à 18, affichez une alerte avec le message :
+
+            "Vous êtes majeur !".
+            3. Sinon, affichez une alerte avec le message :
+
+            "Vous êtes mineur !".
+*/
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- Exercice 1 : Utiliser if/else pour vérifier une condition simple. ----------
+
+      age = parseInt(prompt("Veuillez entrer votre âge:"));
+      //  La fonction parseInt() convertit le premier argument en une chaîne, l'analyse et renvoie un entier ou NaN
+
+      if (isNaN(age) || age <= 0) {
+        alert(" Veuillez entrer un age valide");
+      } else if (age >= 18) {
+        alert("Vous êtes majeur !");
+      } else {
+        alert("Vous êtes mineur !");
+      }
+
+      // **************************    ******************************************
+
+      //   --------- Exercice 2 : Utiliser if/else pour réaliser des opérations basiques. ----------
+      /*
+         Exercice 2 : Calculatrice simple
+            Objectif : Utiliser if/else pour réaliser des opérations basiques.
+            Enoncé :
+            1. Demandez à l'utilisateur :
+            ○ Un premier nombre (prompt).
+            ○ Un deuxième nombre (prompt).
+            ○ Une opération à effectuer (prompt avec les choix : "+", "-", "*", "/").
+
+            2. Utilisez une série de if/else pour effectuer l'opération demandée.
+
+            3. Affichez le résultat avec une alert.
+
+            Exemple :
+            Si l'utilisateur entre :
+            ● Nombre 1 : 10
+            ● Nombre 2 : 5
+            ● Opération : "*"
+            Alors l'alerte affiche :
+
+            "Le résultat de 10 * 5 est 50."
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      //  Exercice 2 : Calculatrice simple
+
+      //  Demander le premier nombre
+      let nombre1 = parseFloat(prompt("Entrez le premier nombre :"));
+      // parseFloat pour changer les chaines de caractére en nombre
+
+      //  Demander le deuxième nombre
+      let nombre2 = parseFloat(prompt("Entrez le deuxième nombre :"));
+
+      //  Pour une opération à effectuer
+      let operation = prompt("Entrez l'opération à effectuer (+, -, *, /) :");
+
+      //  Initialiser une variable pour le résultat
+      let resultat;
+
+      //  Utiliser une série de if/else pour effectuer l'opération
+      if (operation === "+") {
+        resultat = nombre1 + nombre2;
+      } else if (operation === "-") {
+        resultat = nombre1 - nombre2;
+      } else if (operation === "*") {
+        resultat = nombre1 * nombre2;
+      } else if (operation === "/") {
+        if (nombre2 !== 0) {
+          resultat = nombre1 / nombre2;
+        } else {
+          alert("Erreur : division par zéro !");
+        }
+      } else {
+        alert("Opération invalide !");
+      }
+      //  Afficher le résultat si l'opération est valide
+      if (resultat !== undefined) {
+        alert(
+          `Le résultat de ${nombre1} ${operation} ${nombre2} est ${resultat}.`
+        );
+      }
+
+      //     let str1, str2, str3, n1, n2, res;
+
+      // str1 = prompt("Veuillez saisir le 1er nombre : ");
+      // n1 = parseFloat(str1.replace(",", "."));
+      // str2 = prompt("Veuillez saisir le 2ème nombre : ");
+      // n2 = parseFloat(str2.replace(",", "."));
+      // str3 = prompt("Veuillez saisir l'operation parmi : + - * ou / : ");
+
+      // if (isNaN(n1) || isNaN(n2)) {
+      //     alert("Veuillez entrer un nombre valide");
+      // }
+      // else if (str3 === "+") {
+      //         res = n1 + n2;
+      //     } else if (str3 === "-") {
+      //         res = n1 - n2;
+      //         }
+      //     else if (str3 === "*") {
+      //         res = n1 * n2;
+      //         }
+      //     else if (str3 === "/") {
+      //         if (n2 == 0) {
+      //         alert("Vous ne pouvez pas diviser par zéro !");
+      //         }
+      //         else {
+      //             res = n1 / n2; }
+      //     alert(`Le résultat de ${n1} ${str3} ${n2} est ${res}.`);
+      // }
+      // else {
+      //     alert("Veuillez entrer l'operation correctement parmi : + - * ou / : ");
+      // }
+
+      // **************************    ******************************************
+
+      /*  Exercice 3 : Devinez le nombre
+        Objectif : Travailler avec if/else pour vérifier plusieurs conditions.
+        Enoncé :
+        1. Déclarez un nombre secret entre 1 et 10 (par exemple : const nombreSecret
+        = 7).
+        2. Demandez à l'utilisateur de deviner ce nombre via prompt.
+        3. Affichez une alerte :
+        ○ "Bravo, vous avez trouvé le nombre !" si l'utilisateur trouve le
+        nombre.
+        ○ "Trop grand !" si le nombre entré est supérieur au nombre secret.
+        ○ "Trop petit !" si le nombre entré est inférieur.
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- Exercice 3 : Travailler avec if/else pour vérifier plusieurs conditions ----------
+
+      //   mon nombre secret
+      const numberSecret = 6;
+      //   à l'utilisateur de deviner
+      // la fonction parseInt()  renvoie un entier
+      let devine = parseInt(
+        prompt("Deviner le nombre secret (entre 1 et 10) :")
+      );
+
+      if (isNaN(devine)) {
+        alert("entrée un nombre valide");
+      } else if (devine === numberSecret) {
+        alert("Bravo, vous avez trouvé le nombre !");
+      } else if (devine < numberSecret) {
+        alert("Trop petit !");
+      } else {
+        alert("Trop grand !");
+      }
+      // -----------------------------------           ------------------------------------------
+
+      // ------------- Exercice 4 : Utiliser switch pour gérer plusieurs cas. ----------
+
+      /*
+        Exercice 4 : Système de notation
+        Objectif : Utiliser switch pour gérer plusieurs cas.
+        Enoncé :
+        1. Demandez à l'utilisateur de saisir une note (entre 0 et 20).
+        2. Utilisez un switch pour afficher des messages en fonction de la note :
+
+        ○ Entre 0 et 10 : "Insuffisant".
+        ○ Entre 11 et 14 : "Passable".
+        ○ Entre 15 et 17 : "Bien".
+        ○ Entre 18 et 20 : "Excellent".
+        ○ En dehors de cet intervalle : "Note invalide !".
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      let note = parseInt(prompt("Saisissez une note entre 0 et 20 :"));
+
+      switch (true) {
+        case note >= 0 && note <= 10:
+          alert("note Insuffisant");
+          break;
+
+        case note >= 11 && note <= 14:
+          alert("note Passable");
+          break;
+
+        case note >= 15 && note <= 17:
+          alert("note Bien");
+          break;
+
+        case note >= 18 && note <= 20:
+          alert("note Excellent");
+          break;
+
+        default:
+          alert("note invalide ! ");
+      }
+
+      //       let note;
+      // note = prompt('Quelle est votre note ? ');
+
+      // note = parseFloat(note.replace(',', '.'));
+      // // note = Number(note.replace(',', '.'));
+
+      // switch (true) {
+      //     case note >= 0 && note <= 10:
+      //         alert('Insuffisant');
+      //         break
+      //     case note > 10 && note < 15:
+      //         alert('Passable');
+      //         break
+      //     case note >= 15 && note <= 17:
+      //         alert('Bien !');
+      //         break
+      //     case note > 17 && note <= 20:
+      //         alert('Excellent !');
+      //         break
+      //     default:
+      //         alert('Note invalide !');
+      // }
+
+      // -----------------------------------           ------------------------------------------
+
+      /*
+    Exercice 5 : Quel est votre plat préféré ?
+        Objectif : Utiliser switch pour gérer des réponses spécifiques.
+        Enoncé :
+        1. Demandez à l'utilisateur : "Quel est votre plat préféré ? (pizza, sushi, steak, salade)".
+        2. Utilisez un switch pour afficher une alerte en fonction du choix :
+
+        ○ "Pizza : un excellent choix pour les amateurs de fromage !".
+        ○ "Sushi : une option saine et délicieuse !".
+        ○ "Steak : parfait pour les amateurs de viande !".
+        ○ "Salade : un choix équilibré et léger !".
+        3. Si l'utilisateur entre autre chose, affichez :
+        "Désolé, je ne connais pas ce plat.".
+*/
+      // ----------------------------   Solutions   -------------------------
+      //  Exercice 5 : Quel est votre plat préféré ?
+
+      //  à l'utilisateur d'entrée son plat préféré
+      let plat = prompt(
+        "Quel est votre plat préféré ? (pizza, sushi, steak, salade)"
+      );
+      plat = plat.toLocaleLowerCase();
+      // un switch pour afficher une alerte en fonction du choix
+      switch (plat) {
+        case "pizza":
+          alert("Pizza : un excellent choix pour les amateurs de fromage !");
+          break;
+        case "sushi":
+          alert("Sushi : une option saine et délicieuse !");
+          break;
+        case "steak":
+          alert("Steak : parfait pour les amateurs de viande !");
+          break;
+        case "salade":
+          alert("Salade : un choix équilibré et léger !");
+          break;
+        default:
+          alert("Désolé, je ne connais pas ce plat.");
+      }
+
+      // let platPref = prompt("Quel est votre plat préféré? (pizza, sushi, steak, salade)")
+      //   platPref = platPref.toLowerCase();
+      //   console.log(platPref);
+
+      //   switch (platPref) {
+      //       case 'pizza':
+      //           alert("Pizza : un excellent choix pour les amateurs de fromage!");
+      //           break;
+      //       case 'sushi':
+      //           alert("Sushi : une option saine et délicieuse !");
+      //           break;
+      //       case 'steak':
+      //           alert("Steak : parfait pour les amateurs de viande !");
+      //           break;
+      //       case 'salade':
+      //           alert("Salade : un choix équilibré et léger !");
+      //           break;
+      //       default:
+      //           alert("Désolé, je ne connais pas ce plat.");
+
+      //   }
+
+      // -----------------------------------           ------------------------------------------
+
+      /*        
+    Exercice 6 : Test de personnalité
+        Objectif : Combiner if/else et switch.
+        Enoncé :
+        1. Demandez à l'utilisateur de choisir une couleur préférée parmi : "rouge",
+        "bleu", "vert".
+        2. Utilisez un switch pour afficher un message correspondant :
+        ○ "Rouge : Vous êtes passionné et dynamique !".
+        ○ "Bleu : Vous êtes calme et réfléchi.".
+        ○ "Vert : Vous aimez la nature et la tranquillité.".
+        3. Si l'utilisateur ne choisit pas une couleur valide, affichez une alerte : "Couleur non reconnue !".
+        4. Ajoutez une deuxième condition :
+        ○ Si l'utilisateur choisit "bleu" et qu'il est âgé de moins de 20 ans, affichez une alerte supplémentaire :
+        "Les jeunes aiment aussi le bleu !".
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      //   Exercice 6 : Test de personnalité
+
+      //  Demandez à l'utilisateur sa couleur préférée
+      let couleur = prompt(
+        "Choisissez votre couleur préférée ? (rouge, bleu, vert)"
+      ).toLowerCase();
+
+      // l'utilisateur son âge
+      age = parseInt(prompt("Quel est votre âge ?"));
+
+      //  Utilisez un switch pour afficher un message en fonction de la couleur
+      switch (couleur) {
+        case "rouge":
+          alert("Rouge : Vous êtes passionné et dynamique !");
+          break;
+        case "bleu":
+          alert("Bleu : Vous êtes calme et réfléchi.");
+          if (age < 20) {
+            alert("Les jeunes aiment aussi le bleu !");
+          }
+          break;
+        case "vert":
+          alert("Vert : Vous aimez la nature et la tranquillité.");
+          break;
+        default:
+          alert("Couleur non reconnue !");
+      }
+
+      //   // Demander à l'utilisateur de choisir une couleur préférée
+      // let couleur = prompt("Choisissez une couleur parmi : (rouge, bleu, vert)").toLowerCase(); // Conversion en minuscule pour éviter les erreurs de saisie
+
+      // // Demander à l'utilisateur son âge
+      // let age = parseInt(prompt("Quel est votre âge ?"), 10);
+
+      // // Utiliser un switch pour afficher le message correspondant
+      // switch (couleur) {
+      //     case "rouge":
+      //         alert("Rouge : Vous êtes passionné et dynamique !");
+      //         break;
+      //     case "bleu":
+      //         alert("Bleu : Vous êtes calme et réfléchi.");
+      //         // Vérification de l'âge pour le message supplémentaire
+      //         if (age < 20) {
+      //             alert("Les jeunes aiment aussi le bleu !");
+      //         }
+      //         break;
+      //     case "vert":
+      //         alert("Vert : Vous aimez la nature et la tranquillité.");
+      //         break;
+      //     default:
+      //         alert("Couleur non reconnue !");
+      // }
+
+      // -----------------------------------           ------------------------------------------
+
+      /*
+    Exercice 7 : Jeu du chiffre chanceux
+
+            Objectif : associer prompt, if/else, et une structure switch.
+            Enoncé :
+            1. Demandez à l'utilisateur un chiffre entre 1 et 5 via prompt.
+            2. Utilisez un switch pour donner une prédiction amusante :
+            ○ 1 : "Aujourd'hui est votre jour de chance !".
+            ○ 2 : "Un ami vous rendra visite bientôt.".
+            ○ 3 : "Soyez prudent dans vos choix aujourd'hui.".
+            ○ 4 : "Une surprise vous attend au coin de la rue.".
+            ○ 5 : "Restez positif, le meilleur est à venir !".
+            3. Si l'utilisateur entre un chiffre hors de cet intervalle, affichez :
+            "Chiffre invalide. Essayez entre 1 et 5.".
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      //   Exercice 7 : Jeu du chiffre chanceux
+
+      // à l'utilisateur un chiffre entre 1 et 5
+      let chiffre = parseInt(prompt("Entrez un chiffre entre 1 et 5 :"));
+
+      // Utilisez if/else pour afficher une prédiction amusante
+      if (chiffre === 1) {
+        alert("Aujourd'hui est votre jour de chance !");
+      } else if (chiffre === 2) {
+        alert("Un ami vous rendra visite bientôt.");
+      } else if (chiffre === 3) {
+        alert("Soyez prudent dans vos choix aujourd'hui.");
+      } else if (chiffre === 4) {
+        alert("Une surprise vous attend au coin de la rue.");
+      } else if (chiffre === 5) {
+        alert("Restez positif, le meilleur est à venir !");
+      } else {
+        alert("Chiffre invalide. Essayez entre 1 et 5.");
+      }
+    </script>
+  </body>
+</html>

@@ -1,33 +1,219 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Les tableaux - array</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <script>
-        /****************** LES TABLEAUX  *******************************************/
+      /************************************* LES TABLEAUX  *******************************************/
 
-        // -----------------------------------------------------
-            // Tableaux indexés
-        // -----------------------------------------------------
+      // -----------------------------------------------------
+      // Tableaux indexés
+      // -----------------------------------------------------
 
-        // Déclarer un tableau indexé
-        //  1ére façon 
-        let monTableau = [];
-        console.log(monTableau);
-        // 2éme façon
+      // Déclarer un tableau indexé
 
-        let myArray = new Array;
-        console.log(myArray);
-        
+      //  1ére façon
+      let monTableau = [];
+      console.log(monTableau);
 
+      // 2éme façon
+      let myArray = new Array();
+      console.log(myArray);
 
-        
+      // myArray et monTableau sont des tableaux qui peuvent contenir plusieurs informations
 
+      // Affecter des valeurs au tableau, plusieurs methodes
+
+      // a)-
+      let nosPrenoms = ["Andrei", "Roger", "Hawa", "Islem"];
+      // Affiche toute les données de mon tableau
+      console.log(nosPrenoms);
+
+      // b)-
+      monTableau[0] = "Yacine";
+      monTableau[1] = "Fayçal";
+      monTableau[2] = "Ouarda";
+      monTableau[3] = "Alpha";
+      monTableau[4] = "Delma";
+      monTableau[10] = "Andrea";
+      // Affiche toute les données de mon tableau
+      console.log(monTableau);
+      // Afficher "Ouarda"
+      console.log(monTableau[2]);
+
+      // on va créer deux tableaux indexés
+
+      let listeDePrenom = ["Kader", "Alexandre", "Bashir"];
+      let lisetDeNom = ["Ounedjela", "Graziani", "Youcif"];
+      let annuaire = [listeDePrenom, lisetDeNom];
+      // annuaire est un tableau indexé multidimensionnel
+      console.log(annuaire);
+      document.write(annuaire + "<br>");
+      document.write(annuaire[0][0] + " " + annuaire[1][0] + "<br>");
+      document.write(annuaire[0][1] + " " + annuaire[1][1] + "<br>");
+      document.write(annuaire[0][2] + " " + annuaire[1][2] + "<br>");
+      document.write("<hr>");
+
+      // -----------------------------------------------------------------------------
+      let tableau = [
+        // 0
+        [
+          // 0      //1    //2
+          "prenom",
+          "nom",
+          "tel",
+        ],
+        // 1
+        [
+          // 0     // 1         //2
+          "Yacine",
+          "Djediden",
+          "0601050406",
+        ],
+      ];
+      console.log(tableau);
+      document.write(
+        `Nom: ${tableau[1][1]}, prenom: ${tableau[1][0]}, tel: ${tableau[1][2]} <br>`
+      );
+      document.write("<hr>");
+
+      let coordonnee = {
+        prenom: "Mamadou",
+        nom: "Amadou",
+        age: "26",
+        tel: "0605807896",
+      };
+      console.log(coordonnee["prenom"]);
+      console.log(coordonnee.prenom);
+
+      // tableau multidimensionnel à 2 dimensions
+      let contact = [
+        { prenom: "Andrea", nom: "Leo", tel: "0785456012" },
+        { prenom: "Hawa", nom: "Kone", tel: "0679502459" },
+        { prenom: "Alexandre", nom: "Cavet", tel: "0658981475" },
+      ];
+      console.log(contact);
+      console.log(contact[1]["nom"]); // Kone
+      console.log(contact[1].nom);
+      console.log(contact[0]["tel"]);
+
+      // tableau multidimensionnel à 4 dimensions
+      let array4Dimentions = [
+        {
+          prenom: "Roger",
+          nom: "Davies",
+          coordonnees: {
+            email: "roger.davies@colombbus.org",
+            tel: {
+              fixe: "158736248",
+              fax: "1212313144",
+              port: {
+                privé: "0652032586",
+                pro: "2536320245",
+              },
+            },
+            adresse: {
+              ville: "Paris",
+              cp: "75010",
+              pays: {
+                code: "FR",
+                nom: "France",
+              },
+            },
+          },
+        },
+      ];
+
+      console.log(array4Dimentions);
+      console.log(array4Dimentions[0].coordonnees.email);
+      console.log(array4Dimentions[0]["coordonnees"]["email"]);
+      console.log(array4Dimentions[0].coordonnees.adresse.pays.code);
+      console.log(
+        array4Dimentions[0]["coordonnees"]["adresse"]["pays"]["code"]
+      );
+      console.clear();
+
+      // -------------------------------------------------
+      //  Les propiétés et les methodes des tableaux
+      // -------------------------------------------------
+
+      let couleurs = ["Rouge", "Vert", "Gris"];
+      console.log(couleurs);
+      console.log(couleurs.length); // length est une propriété qui affiche le nombre d'éléments ou la taille ou la longueur d'un tableau
+      // je stock la longueur de ce tableau dans une variable
+      // let longueurTableau = couleurs.length;
+      // console.log(longueurTableau);
+
+      // pour ajouter un élément en fin de mon tableau, j'utilise la methode "push()"
+      couleurs.push("violet");
+      console.log(couleurs);
+      console.log(couleurs.length);
+
+      // pour supprimer le dernier élément de mon tableau, j'utilise la methode "pop()"
+      couleurs.pop();
+      console.log(couleurs);
+
+      // pour ajouter un ou des éléments au début du tableau, j'utilise la methode "unshift()"
+      couleurs.unshift("Rose", "Orange");
+      console.log(couleurs);
+
+      // pour ajouter, supprimer ou remplacer des éléments n'importe où daans un tableau, j'utilise la methode "splice()"
+      // la methode splice() va prendre trois paramétres :
+      /*
+                - une position de départ : à partir d'où commence le changement
+                - nombre d éléments à remplacer où à enlever  
+                - les éléments à ajouter au tableau 
+            */
+      // ["Rose", "Orange", Rouge", "Vert", "Gris"]
+      couleurs.splice(1, 0, "Maron", "noir");
+      // ["Rose", "Maron", "Noir", "Orange", Rouge", "Vert", "Gris"]
+      console.log(couleurs);
+      // ["Rose", "Maron", "Noir", "Orange", Rouge", "Vert", "Gris"]
+      // pour remplacer Noir par Bleu
+
+      couleurs.splice(2, 1, "Bleu");
+      console.log(couleurs);
+
+      let joursSemaine = [
+        "Lundi",
+        "Mardi",
+        "Mercredi",
+        "Jeudi",
+        "Vendre",
+        "Samedi",
+        "Dimanche",
+      ];
+      // console.log(joursSemaine);
+
+      let joursTravail10MW = joursSemaine.slice(0, 5);
+      console.log(joursTravail10MW);
+      // console.log(joursSemaine)
+      joursTravail10MW = joursSemaine.splice(2, 1);
+      console.log(joursTravail10MW);
+      let joursTravailColombbus = joursTravail10MW;
+      console.log(joursTravailColombbus);
+
+      //  Pour choissir le séparateur entre les éléments, j'utilise la methode join() qui retourne une chaîne de caractére créee en concatainant les différents valeurs d'un tableau
+      let contactCouleur = couleurs.join(" - "); // C'est impératif de stocker la chaine de caractére dans une autre variable
+      console.log(contactCouleur);
+      document.write(`<br> ${contactCouleur}`);
+      // Pour déterminer si tableau contient une valeur précise, j'utilise la valeur includes(), et je passe la valeur recherchée en argument dans la methode
+      let langages = ["HTML", "CSS", "JS"];
+      let verif = langages.includes("CSS"); // Attention la methode vérifie l'écriture : sensible à la casse
+      console.log(verif); // true
+      console.log(typeof verif); // boolean
+      console.log(typeof langages); //object
+
+      // Pour fusionner différent tableau entre eux à fin d'ent créer un nouveau tableau j'utilise la methode concat()
+      let totalTableau = langages.concat(
+        couleurs,
+        monTableau,
+        array4Dimentions
+      );
+      console.log(totalTableau);
     </script>
-    
-</body>
+  </body>
 </html>

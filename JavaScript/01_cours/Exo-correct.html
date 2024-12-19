@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Corrections</title>
+  </head>
+  <body>
+    <script>
+      /*
+        Exercice 1 : Fonction de salutation
+        Énoncé :
+        Créez une fonction saluer qui prend un nom en paramètre et affiche une salutation du type :
+        "Bonjour, [nom] !".
+        Appelez cette fonction avec plusieurs noms différents.
+    */
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 1 : Fonction de salutation   ----------
+
+      function saluer(Nom) {
+        document.write(`<p> Bonjour ${Nom} !`);
+      }
+      saluer("Kone");
+      saluer("Leta");
+      saluer("Leo");
+      saluer("Cavet");
+
+      // ------------------------------------------------------------------------------------------------
+      /*
+            Exercice 2 : Somme de deux nombres
+                Énoncé :
+                Créez une fonction somme qui prend deux nombres en paramètres et retourne leur
+                somme.
+                Affichez le résultat dans la console.
+    */
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 2 : Somme de deux nombres  ----------
+
+      function somme(nombre1, nombre2) {
+        return nombre1 + nombre2;
+      }
+      let resultat = somme(10, 7);
+      console.log("La somme de 10 et 7 est :", resultat);
+
+      /*
+        Exercice 3 : Vérification de nombre pair 
+        Énoncé :
+            Créez une fonction estPair qui prend un nombre en paramètre et retourne true si le
+             nombre est pair, sinon false.
+    */
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 3 : Vérification de nombre pair   ----------
+      function estPair(nombre) {
+        return nombre % 2 === 0; // pour vérifier que le reste de la division est égal à 0
+      }
+      let nombre = 4;
+      let resultat1 = estPair(nombre);
+      console.log(`Le nombre ${nombre} est pair`, resultat1);
+
+      /* let estPair = (nombre) => nombre % 2 === 0;
+        if ((nombre % 2) == 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+        */
+
+      /*
+    Exercice 4 : Compter les voyelles dans une chaîne
+        Énoncé :
+        Créez une fonction compterVoyelles qui prend une chaîne de caractères en
+        paramètre et retourne le nombre de voyelles (a, e, i, o, u, y) présentes dans la chaîne.
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 4 :  Compter les voyelles dans une chaîne  ----------
+
+      function compterVoyelles(chaîne) {
+        // liste des voyelles
+        const voyelles = "aeiouyAEIOUY";
+        let compteur = 0;
+        // Boucle de la fonction
+        for (let caractere of chaîne) {
+          if (voyelles.includes(caractere)) {
+            // pour vérifier si le caractére est une voyelle
+            compteur++;
+          }
+        }
+
+        /*for (let i = 0; i < chaine.length; i++) {
+          if (voyelles.includes(chaine[i])) {
+            compteur++;
+          }
+        }*/
+
+        return compteur;
+      }
+      // appel de la fonction
+      let texte = "Bonjour les amis";
+      let resultat2 = compterVoyelles(texte);
+
+      // Afficher le résultat dans la console
+      console.log(`La chaîne : ${texte} contient ${resultat2} voyelles.`);
+
+      // ---------------------------------------------------------------------------------
+
+      /*
+  Exercice 5 : Fonction pour inverser une chaîne
+    Énoncé :
+    Créez une fonction inverserChaine qui prend une chaîne en paramètre et retourne
+    cette chaîne inversée.
+*/
+
+      // ----------------------------   Solutions   -------------------------
+
+      // --------- EXERCICE 5 :  Fonction pour inverser une chaîne ----------
+
+      // definir la fonction inverserChaine
+      function inverserChaine(chaine) {
+        return chaine.split("").reverse().join("");
+      }
+
+      // Appel de la fonction
+      let texte1 = "Bonjour à tous";
+      let solution = inverserChaine(texte1);
+
+      // Afficher le résultat dans la console
+      console.log(`La chaine : ${texte1} inversée est : ${solution}.`);
+
+      /*
+    Exercice 6 : Trouver le plus grand nombre dans un tableau
+      Énoncé :
+      Créez une fonction trouverMax qui prend un tableau de nombres en paramètre et
+      retourne le plus grand nombre du tableau.
+*/
+
+      // ----------------------------   Solutions   -------------------------
+      // --------- EXERCICE 6 : Trouver le plus grand nombre dans un tableau  ----------
+
+      // Définition de la fonction trouverMax
+      function trouverMax(nombres) {
+        return Math.max(...nombres);
+      }
+      // let trouverMax(nombres) => Math.max(...nombres);
+
+      // Appel de la fonction avec un exemple
+      nombres = [5, 97, 4, 109, 12, 8];
+
+      // Affichage du résultat dans la console
+      console.log(trouverMax(nombres));
+
+      // Methode avec les fonctions prédéfinies :
+      function inverserChaine(str) {
+        return str.split("").reverse().join("");
+      }
+      let str = "hello";
+      // console.log(str.reverse());
+      console.log(str.split(""));
+      console.log(str.split("").reverse());
+      console.log(str.split("").reverse().join(""));
+      console.log(inverserChaine(str));
+
+      // Methode avec index pour remplacer .reverse :
+      function inverserChaine2(str) {
+        let tmp = str.split("");
+        let i = 0,
+          j = str.length - 1;
+        while (i < str.length) {
+          tmp[j] = str[i];
+          i++;
+          j--;
+        }
+        return tmp.join("");
+      }
+
+      console.log(inverserChaine2(str));
+
+      // Methode avec for of :
+
+      function inverserChaine3(str) {
+        let inverser = "";
+        for (let i of str) {
+          inverser = i + inverser;
+        }
+        return inverser;
+      }
+
+      console.log(inverserChaine3("salut"));
+
+      //Excercice 6
+      /*
+      ------ Première manière avec "for ... of"
+
+      function trouverMax(table) {
+        let max = table[0];
+        for (let nombre of table) {
+          if (nombre > max) {
+            max = nombre;
+          }
+        }
+        return console.log("La plus grande valeur est : ", max);
+      }
+       
+      //------- Deuxième manière : Avec "for ... in"
+      function trouverMax(table) {
+        let max = table[0];
+        for (let i in table) {
+          if (table[i] > max) {
+            max = table[i];
+          }
+        }
+        return console.log("La plus grande valeur est : ", max);
+      }
+      trouverMax([10, 5, 44, 7]);
+*/
+
+      // ----- Troisième manière avec forEach
+
+      function trouverMax(tableau) {
+        let max = tableau[0];
+        tableau.forEach((valeur) => {
+          if (valeur > max) {
+            max = valeur;
+          }
+        });
+        return max;
+      }
+      console.log(
+        "La plus grande valeur est : ",
+        trouverMax([142, 353, 35, 373, 8, 9])
+      );
+
+      // -------- 4e manière en utilisant "Math.max"
+      /*
+      function trouverMax(tableau) {
+        return Math.max(...tableau); // ... la décomposition du tableau
+      }
+      console.log(...[10, 5, 44, 7]);
+      //trouverMax(...[10, 5, 44, 7]);
+      trouverMax([4, 5, 77, 65]);
+
+
+      // ----- En utilisant la Fonction fléchée
+      //let trouverMax = (tableau) => Math.max(...tableau);
+      //console.log(trouverMax([10, 5, 44, 7]));
+      */
+    </script>
+  </body>
+</html>
