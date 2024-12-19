@@ -72,7 +72,7 @@ divInfo.addEventListener("mouseover", function() {
     divInfo.textContent = "PINK";
 });
 
-// 4- div #primary
+// 5- div #primary
 //  avec la fonction anonyme 
 let divPrimary= document.querySelector("#primary");
 divPrimary.addEventListener("mouseout" /* mouseleave */, function() {
@@ -84,3 +84,42 @@ divPrimary.addEventListener("mouseout" /* mouseleave */, function() {
     //  Je peux intéragir sur un autre élément gâce à la même fonction
     document.querySelector("h1").style.color = "green";
 });
+
+// 6- div #success : click et reclick
+let divChangeCouleur = document.querySelector("#success");
+divChangeCouleur.addEventListener('click', ()=>{  
+    if (divChangeCouleur.classList.contains('vert')) {    // je vérifie si la div contient la class "vert" dans la liste de classes
+    //  si true
+        divChangeCouleur.classList.remove('vert');  // je supprime la classe vert 
+        divChangeCouleur.classList.add('gold');   // je rajoute la class gold
+        divChangeCouleur.textContent = 'GOLD';
+    }else {
+        // sinon si false -> la div ne contient pas la classe vert => elle contient la classe gold
+        divChangeCouleur.classList.add('vert');   // je rajoute la class vert 
+        divChangeCouleur.classList.remove('gold');     // je supprime la classe gold
+        divChangeCouleur.style.cursor = "pointer";
+        divChangeCouleur.textContent = 'VERT';
+    }
+});
+
+/* image chat */
+let imageChat = document.queryselector('img');
+imageChat.style.width = "300px ";
+
+let lesP = document.querySelectorAll('.toggle p');
+console.log(lesP);
+lesP[0].style.texDecoration = 'underline';
+lesP[1].style.texDecoration = 'underline';
+lesP[2].style.texDecoration = 'underline';
+
+for (let paragraphe of lesP) {
+    paragraphe.style.texDecoration = 'underline';
+    paragraphe.style.colr= '#ee3366';
+    paragraphe.style.fontWiegth = 'bolder';
+
+
+
+}
+
+
+
