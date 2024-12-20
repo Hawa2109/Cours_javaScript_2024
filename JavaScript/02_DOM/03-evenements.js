@@ -102,7 +102,7 @@ divChangeCouleur.addEventListener("click", () => {
 
 /* image chat */
 let imageChat = document.querySelector("img");
-imageChat.style.width = "300px ";
+imageChat.style.width = "300px";
 
 let lesP = document.querySelectorAll(".toggle p");
 console.log(lesP);
@@ -112,27 +112,27 @@ console.log(lesP);
 // lesP[2].style.textDecoration = "underline";
 
 for (let paragraphe of lesP) {
-  paragraphe.style.texDecoration = "underline";
-  paragraphe.style.colr = "#ee3366";
-  paragraphe.style.fontWiegth = "bolder";
-}
-
-for (let paragraphe of lesP) {
   paragraphe.style.textDecoration = "underline";
   paragraphe.style.color = "#ee3366";
   paragraphe.style.fontWeight = "bolder";
 }
 
+// for (let paragraphe of lesP) {
+//   paragraphe.style.textDecoration = "underline";
+//   paragraphe.style.color = "#ee3366";
+//   paragraphe.style.fontWeight = "bolder";
+// }
+
 // ---------------------
-lesP[0].addEventListener("click", () => {
+lesP[0].addEventListener("click", ()=>{
   imageChat.classList.add("hide");
 });
 
-lesP[1].addEventListener("click", () => {
+lesP[1].addEventListener("click", ()=>{
   imageChat.classList.remove("hide");
 });
 
-lesP[2].addEventListener("click", () => {
+lesP[2].addEventListener("click", ()=>{
   imageChat.classList.toggle("hide");
 });
 
@@ -167,8 +167,9 @@ lesP[2].addEventListener("click", () => {
 
 //  Il set possible d'annuler ce comportement par défaut en appelant la méthode "preventDefault()" sur l'objet "event"
 document.querySelector("#interdit").addEventListener("click", (event) => {
-  event.preventDefault(); // la méthode "preventDefault()" est particulierement utile pour éviter que la soumission d'un formulaire recharge la page
   console.log("Continuer plutôt à lire le cours !!!");
+
+  event.preventDefault(); // la méthode "preventDefault()" est particulierement utile pour éviter que la soumission d'un formulaire recharge la page
 
   console.log(event);
 });

@@ -1,4 +1,4 @@
-let button = document.getElementById("toogle-rectangle");
+let button = document.getElementById("toggle-rectangle");
 let rectangle = document.querySelector(".rectangle");
 //  pour afficher le rectangle
 button.addEventListener("click", () => {
