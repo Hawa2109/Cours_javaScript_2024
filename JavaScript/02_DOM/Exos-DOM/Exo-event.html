@@ -6,59 +6,31 @@
     <title>Exercice sur les évément</title>
     <script src="./Exo-event.js" defer></script>
     <link rel="stylesheet" href="Exo-event.css" />
-
-    <!-- <style>
-      .rectangle {
-        width: 200px;
-        height: 100px;
-        background-color: blue;
-        margin: 20px;
-        display: block;
-      }
-      .hidden {
-        display: none;
-      }
-    </style> -->
   </head>
   <body>
+    <div class="Exo-1">
     <h1>Gestion de la souris</h1>
-
+     <p>
+      - Quand on clique sur le bouton "toggle-rectangle", cela cache ou affiche
+      le rectangle.
+    </p>
     <button id="toggle-rectangle">Cacher / Afficher le rectangle</button>
     <div class="rectangle"></div>
 
-    <p>
-      - Quand on clique sur le bouton *toggle-rectangle*, cela cache ou affiche
-      le rectangle.
-    </p>
+   
     <p>
       - Quand la souris se déplace à l'intérieur du rectangle il devient rouge;
       il reprend sa couleur originale quand la souris n'est plus dedans.
     </p>
     <p>- Quand on double-clique sur le rectangle il devient vert.</p>
+    </div>
 
-    <!-- <script>
-      let button = document.getElementById("toogle-rectangle");
-      let rectangle = document.querySelector(".rectangle");
-      //  pour afficher le rectangle
-      button.addEventListener("click", () => {
-        rectangle.classList.toggle("hidden");
-      });
+    <div class="Exo-2">
+            <h2>Gestion de la souris</h2>
+            <p>Au survol de la souris </p>
 
-      // Changer la couleur en rouge quand la souris entre
-      rectangle.addEventListener("mouseenter", () => {
-        rectangle.style.backgroundColor = "red";
-      });
-
-      // Revenir à la couleur originale quand la souris sort
-      rectangle.addEventListener("mouseleave", () => {
-        rectangle.style.backgroundColor = "blue";
-      });
-
-      // Changer la couleur en vert sur un double-clic
-      rectangle.addEventListener("dblclick", () => {
-        rectangle.style.backgroundColor = "green";
-      });
-    </script> -->
-    <!-- <script src="./Exo-event.js"></script> -->
+            <button id="toggle-cercle">Cacher / Afficher le cercle</button>
+        <div class="cercle"></div>                  
+    </div>
   </body>
 </html>
