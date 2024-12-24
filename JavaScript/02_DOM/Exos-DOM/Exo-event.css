@@ -41,6 +41,12 @@ button {
 p {
   font-size: 1.5em;
 }
+.rouge {
+  background-color: red;
+}
+.vert {
+  background-color: green;
+}
 /* ----------------------------------------- Exos 2 --------------------------------- */
 .Exo-2 {
   margin: 15px;

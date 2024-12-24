@@ -1,40 +1,57 @@
+// let button = document.getElementById("toggle-rectangle");
+// let rectangle = document.querySelector(".rectangle");
+//  pour afficher le rectangle
+// button.addEventListener("click", afficherCacher);
+  
+// function afficherCacher () {
+//   rectangle.classList.toggle("hidden"); 
+// }
+
+// // Changer la couleur en rouge quand la souris entre
+// rectangle.addEventListener("mouseenter", () => {
+//   rectangle.style.backgroundColor = "red";
+// });
+
+// // Revenir à la couleur originale quand la souris sort
+// rectangle.addEventListener("mouseleave", () => {
+//   rectangle.style.backgroundColor = "blue";
+// });
+
+
+// // Changer la couleur en vert sur un double-clic
+// rectangle.addEventListener("dblclick", () => {
+//   rectangle.style.backgroundColor = "green";
+// });
+
 let button = document.getElementById("toggle-rectangle");
 let rectangle = document.querySelector(".rectangle");
-//  pour afficher le rectangle
-button.addEventListener("click", () => {
-  rectangle.classList.toggle("hidden");
-});
+// console.log(button);
+// console.log(rectangle);
 
-// Changer la couleur en rouge quand la souris entre
-rectangle.addEventListener("mouseenter", () => {
-  rectangle.style.backgroundColor = "red";
-});
+// --------------------------------------------------------------
+//  on cré nos fonctions
+function afficherCacher () {
+  rectangle.classList.toggle("hidden"); 
+}
+function addColorChange (){
+  rectangle.classList.add("rouge");
+}
+function removeColorChange(){
+  rectangle.classList.remove("rouge");
+}
+function addColorChangeGreen(){
+  rectangle.classList.add("vert");
+}
+function removeColorChangeGreen(){
+  rectangle.classList.remove("vert");
+} 
 
-// Revenir à la couleur originale quand la souris sort
-rectangle.addEventListener("mouseleave", () => {
-  rectangle.style.backgroundColor = "blue";
-});
+// -------------------------------------------------------
 
-// Changer la couleur en vert sur un double-clic
-rectangle.addEventListener("dblclick", () => {
-  rectangle.style.backgroundColor = "green";
-});
+//  On pose nos ecouteur d'événements
+button.addEventListener("click", afficherCacher);
+rectangle.addEventListener("mouseenter", addColorChange);
+rectangle.addEventListener("mouseout", removeColorChange);
+rectangle.addEventListener("dblclick", addColorChangeGreen);
+rectangle.addEventListener("mouseout", removeColorChangeGreen);
 
-// ********************************** Exo 2 ***********************************
-let buttoncercle = document.getElementById("toggle-cercle");
-let cercle = document.querySelector(".cercle");
-
-// pour afficher ou cacher le cercle
-buttoncercle.addEventListener("click", function () {
-  cercle.classList.toggle("hidden");
-});
-
-//  pour changer la couleur au survol 
-cercle.addEventListener("mouseover", function () {
-  cercle.style.backgroundColor = "orange";
-});
-
-// revenir à la couleur de départ grâce à  un double-clic
-cercle.addEventListener("dblclick", () => {
-  cercle.style.backgroundColor = "rgb(7, 72, 72)";
-});

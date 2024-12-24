@@ -6,13 +6,13 @@ Les événements vont nous permettre de déclencher une fonction, c'est à dire 
 Pour implémenter cela nous devons d'abord dire à javaScript de les écouter grâce à "eventListerner", littéralement un "écouteur d'événement", en français. Puis nous devons lier l'événement à un bloc de code.
 
 Ecouter un événement avec addEventListener : 
-addEventListener est une methode fournie par javaScript, qui peut eê^tre appelée directement depuis les éléments HTML. Cette méthode prend deux paramétres: 
+addEventListener est une methode fournie par javaScript, qui peut être appelée directement depuis les éléments HTML. Cette méthode prend deux paramétres: 
 -> le nom de l'événement, comme click, par exemple; 
 -> une fonction
 
 la fonction peut s'écrire de deux maniéres différentes : 
 -> les fonction classiques avec le mot clé "function";
-les fonctions fléchées.
+-> les fonctions fléchées.
 
 syntaxe : 
 selecteur.addEventListener("événement", "fonction");

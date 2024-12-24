@@ -1,0 +1,16 @@
+.hide {
+    display: none;
+}
+
+.green {
+    background-color: green;
+}
+.red {
+    background-color: red;
+    border-color: red;
+}
+
+.rectangle {
+    height: 20px;
+    width: 188px;
+}
