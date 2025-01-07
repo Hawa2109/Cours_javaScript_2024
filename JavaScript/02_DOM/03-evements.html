@@ -100,6 +100,50 @@
 
         </section>
 
+        <!-- Formulaire -->
+        <section class="row border border-dark p-4 my-4 rounded">
+            <form action="#" method="#" class="d-flex flex-column">
+                <div class="col">
+                    <!-- Champ prenom -->
+                    <div class="mb-3">
+                        <label for="premon">Votre prenom</label>
+                        <input type="text" name="prenom" id="prenom" placeholder="Saisissez votre prenom">
+                    </div>
+                    <!-- Case à cocher -->
+                    <h6 class="mt-5">Langages</h6>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="html" value="html" name="Langage">
+                        <label class="form-check-label" for="html" id="labelHtml">HTML</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="css" value="css" name="Langage">
+                        <label class="form-check-label" for="css" id="labelCss">CSS</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="js" value="js" name="Langage">
+                        <label class="form-check-label" for="js" id="labelJs">JavaScript</label>
+                    </div>
+                    <!-- Bouton radio -->
+                    <h6 class="mt-5">Appréciation</h6>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="niveau" id="acquis" value="acquis">
+                        <label class="form-check-label" for="">Acquis</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="niveau" id="enCours" value="enCours">
+                        <label class="form-check-label" for="enCours">En cours d'acquisition</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="niveau" id="nonAcquis" value="nonAcqui">
+                        <label class="form-check-label" for="nonAcqui">Non acquis</label>
+                    </div>
+                </div>
+                <div class="mt-5">
+                <button type="submit" id="submit" class="btn btn-primary">Envoyer</button>
+                </div>
+            </form>
+        </section>
+
 
     </main>
 

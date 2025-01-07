@@ -24,7 +24,7 @@ etape 3 -> poser l'écouteur d'évément pour l'intéraction
 
 //  1- div #rouge
 let divRouge = document.querySelector("#rouge"); // je selectionne ma div par son ID, ensuite lui rajouter un écouteur dévénement
-console.log(divRouge);
+// console.log(divRouge);
 
 // divRouge.addEventListener("click", function(){
 //     divRouge.style.backgroundColor = "gold";
@@ -105,7 +105,7 @@ let imageChat = document.querySelector("img");
 imageChat.style.width = "300px";
 
 let lesP = document.querySelectorAll(".toggle p");
-console.log(lesP);
+// console.log(lesP);
 
 // lesP[0].style.textDecoration = "underline";
 // lesP[1].style.textDecoration = "underline";
@@ -169,7 +169,182 @@ lesP[2].addEventListener("click", ()=>{
 document.querySelector("#interdit").addEventListener("click", (event) => {
   console.log("Continuer plutôt à lire le cours !!!");
 
-  event.preventDefault(); // la méthode "preventDefault()" est particulierement utile pour éviter que la soumission d'un formulaire recharge la page
+  event.preventDefault(); // la méthode "preventDefault()" est particulierement utile pour éviter que la soumission d'un formulaire recharge la page. 
 
-  console.log(event);
+  // console.log(event);
 });
+
+// **************************************
+  // ----------------------- Gestion du formulaire ----------------------------------
+  let prenom = document.querySelector('#prenom');
+  // console.log(prenom);
+//  En JS, pour accéder à la valeur d'une zone de texte dans un formulaire, on utilise la propeiété "value"
+  let submit = document.querySelector('#submit');
+  submit.addEventListener('click', (event)=> {
+    event.preventDefault(); 
+    //  Je récupére la valeur de l'élément input prenom
+    let prenomValue = prenom.value;
+    console.log(prenomValue);
+    
+    // console.log(event.target);
+  } );
+
+// Autre façon 
+// let form = document.querySelector('form');
+// form.addEventListener('submit', (e) => {
+// // Ici l'élément 
+//   e.preventDefault();
+//   console.log(e);
+  
+// let prenomValue = prenom.value;
+// console.log(prenomValue);
+ 
+// });
+
+//  Focus blur pour les formulaires 
+// Focus 
+prenom.addEventListener('focus', () => { // l'utilisateur click à l'intérieur du champ (input prenom)
+console.log(prenom.style.width);
+prenom.style.width = '100px';
+
+console.log(prenom.style.width);
+});
+//  Blur
+prenom.addEventListener('blur', () =>{ // L'utilisateur sort du champ (input prenom)
+prenom.style.width= "500px";
+});
+// -1)  Method 
+// Evennement "change"
+//  L'évennement change est déclanché lorsqu'un changement de la valeur d'un élément html est réalisé par l'utilisateur 
+// const HTML = document.querySelector('#html');
+//  const LABEL_HTML = document.querySelector('#labelHtml');
+
+// HTML.addEventListener('change', (event)=>{
+// // console.log(event.target);
+// console.log(HTML.checked);
+// if (HTML.checked){
+//   // document.querySelector('#labelHtml').style.color = "red";
+
+//   //  ou l'appelé via la variable LABEL_HTML
+//   LABEL_HTML.style.color="red";
+
+//   // ou par l'id (non recommandé)
+//   // labelHtml.style.color="red";
+
+//   // console.log(event.target);
+//   event.target.style.backgroundColor='red'; // ici on change le background_color de l'élément input 
+
+//   // event.target.nexElementSibling.style.color='red'; // ici on change la couleur de l'élément "label"  à partir de l'élément input
+  
+// } else{
+//   document.querySelector('#labelCss').style.color = "blue";
+// }
+// });
+// // CSS EXO
+// const CSS = document.querySelector('#css');
+//  const LABEL_CSS = document.querySelector('#labelCss');
+
+// CSS.addEventListener('change', (event)=>{
+// // console.log(event.target);
+// console.log(CSS.checked);
+// if (CSS.checked){
+//   document.querySelector('#labelCss').style.color = "pink";  
+//   event.target.style.backgroundColor='green'; 
+// } else{
+//   document.querySelector('#labelCss').style.color = "blue";
+// }
+// });
+
+//************************      */ EXO JS  *******************************
+
+// const JS = document.querySelector('#js');
+//  const LABEL_JS = document.querySelector('#labelJs');
+
+// JS.addEventListener('change', (event)=>{
+// // console.log(event.target);
+// console.log(JS.checked);
+// if (JS.checked){
+//   document.querySelector('#labelJs').style.color = "yellow";
+//   event.target.style.backgroundColor='pink'; 
+  
+// } else{
+//   document.querySelector('#labelJs').style.color = "blue";
+// }
+// });
+
+// -2)   Method
+// -------- Avec une boucle --------------------
+let checks = document.getElementsByName('Langage');
+console.log(checks);
+for (let button of checks){
+button.addEventListener('change', (event)=> {
+  //  je vérifie si la valeur du check de l'élément dans mon objet event => true si la case est cocher
+  console.log(event.target.labels[0]);
+  
+  if (event.target.checked){
+    event.target.labels[0].style.color='red';
+  }else{
+    event.target.labels[0].style.color='blue';  
+  }
+});
+}
+
+//  Exo pour les boutons radio
+// let radio = document.getElementsByName("niveau");
+
+// // Fonction pour réinitialiser les couleurs des labels
+// function resetLabelColors() {
+//     for (let btn of radio) {
+//         btn.labels[0].style.color = ""; // Remettre la couleur par défaut
+//     }
+// }
+
+// // Écouteurs d'événements pour chaque bouton radio
+// for (let button of radio) {
+//     button.addEventListener("change", (event) => {
+//         resetLabelColors(); // Appeler la fonction de réinitialisation
+
+//         if (button.checked) {
+//             switch (event.target.value) {
+//                 case "acquis":
+//                     event.target.labels[0].style.color = "green";
+//                     break;
+//                 case "enCours":
+//                     event.target.labels[0].style.color = "orange";
+//                     break;
+//                 default:
+//                     event.target.labels[0].style.color = "red";
+//                     break;
+//             }
+//         }
+//     });
+// }
+
+// Exo pour le radio
+
+let radio = document.getElementsByName('niveau');
+console.log(radio);
+for (let button of radio){
+button.addEventListener('change', (event)=> {
+  //  je vérifie si la valeur du check de l'élément dans mon objet event => true si la case est cocher
+  console.log(event.target);
+  // console.log(event.target.value);
+  
+  // if (button.checked){
+    switch (button.value) {
+      case "acquis":  
+        event.target.labels[0].style.color="green"; 
+      break;
+      case "enCours":
+        event.target.labels[0].style.color="orange"; 
+      break;
+      default:
+        event.target.labels[0].style.color="red"; 
+        break;
+    }
+  // }
+});
+}
+
+
+
