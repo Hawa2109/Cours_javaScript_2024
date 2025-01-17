@@ -50,6 +50,7 @@ if (lengthPseudo < 5 || lengthPseudo > 15 ) {
     document.querySelector(".iconePseudo").classList.remove("d-none");
     document.querySelector(".iconePseudo").style.color = "red"; 
 } else {
+    document.querySelector("#pseudoError").classList.add("d-none");
     document.querySelector(".iconePseudo").classList.remove("d-none");
     document.querySelector(".iconePseudo").classList.replace("bi-x", "bi-check");
     document.querySelector(".iconePseudo").style.color = "green"; 
@@ -58,7 +59,14 @@ if (lengthPseudo < 5 || lengthPseudo > 15 ) {
 // ****************** email ************************ 
 if (!regexMail.test(valueEmail)) {
     document.querySelector("#emailError").classList.add("error");
-    document.querySelector("#emailError").classList.remove("d-none"); 
+    document.querySelector("#emailError").classList.remove("d-none");
+    document.querySelector(".iconeEmail").classList.remove("d-none");
+    document.querySelector(".iconeEmail").style.color = "red"; 
+}else {
+    document.querySelector("#emailError").classList.add("d-none");
+    document.querySelector(".iconeEmail").classList.remove("d-none");
+    document.querySelector(".iconeEmail").classList.replace("bi-x", "bi-check");
+    document.querySelector(".iconeEmail").style.color = "green"; 
 }
 // ****************** PassWord ************************ 
 if (!regexMdp.test(valuePassWord)) {
