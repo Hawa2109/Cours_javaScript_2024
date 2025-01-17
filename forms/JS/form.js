@@ -40,7 +40,8 @@ let valuePassWord = inputPassWord.value.trim();
 // console.log(valuePassWord);
 
 let regexMail = /^[a-z0-9.%+-]+@[a-z0-9.-]+\.[a-z]{2,4}a$/;
-let regexMdp = /^(?=.*[a-z])(?=.*[a-z])(?=.\d)(?=.*[#$^+=!*()@%&].{8,10})$/;
+// let regexMdp = /^(?=.*[a-z])(?=.*[a-z])(?=.\d)(?=.*[#$^+=!*()@%&].{8,10})$/;
+let regexMdp =/^(?=.*[a-z])(?=.*[A-Z])(?=.\d)(?=.*[#$^+=!*()@%&].{8,10})$/;
 
 // ******************** Pseudo ********************* 
 if (lengthPseudo < 5 || lengthPseudo > 15 ) {
@@ -68,11 +69,11 @@ if (!regexMdp.test(valuePassWord)) {
 // ***************************** *********************
 let show = document.querySelector("#show");
 show.addEventListener("click", ()=>{
-    if (inputPassWord.type == "passWord") {
+    if (inputPassWord.type == "password") {
         inputPassWord.type = "text";
         show.classList.replace("bi-eye-slash-fill", "bi-eye-fill");
     }else {
-        inputPassWord.type = "passWord";
+        inputPassWord.type = "password";
         show.classList.replace("bi-eye-fill", "bi-eye-slash-fill");
     }
 })
