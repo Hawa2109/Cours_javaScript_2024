@@ -1,0 +1,32 @@
+.error {
+    width: 30%;
+    padding: 5px;
+    background-color: pink;
+    border-radius: 10px;
+}
+
+/* On traite le MDP, EMAIL, PSEUDO */
+.positionPseudo, .positionEmail, .positionMdp{
+    position: relative;
+}
+/* PSEUDO */
+.iconePseudo{
+position: absolute;
+right: 2%;
+top: 5%;
+font-size: 1.5em;
+}
+/* email */
+.iconeEmail{
+    position: absolute;
+right: 2%;
+top: 5%;
+font-size: 1.5em;
+}
+/* password */
+.iconeMdp {
+position: absolute;
+right: 2%;
+top: 5%;
+font-size: 1.5em;
+}
